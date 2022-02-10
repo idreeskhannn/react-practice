@@ -1,36 +1,17 @@
-import react, { useState } from "react"
+import react from "react"
+import Blb from "./components/Bulb";
+import Count from "./components/counter";
+import Theme from "./components/themeChange";   
+import Ternary from "./components/themeChngUsingTernaryOpt";
 import "./index.css"
 const App = _ => {
-  const [myStyle, setStyle] = useState({
-    color: 'black',
-    backgroundColor: "white",
-    // width : "100%",
-    // height : "500px"
-  })
-  const [btn, setBtn] = useState("Dark Mood")
-  const change = _ => {
-    if (myStyle.color == "black") {
-      setStyle({
-        color: 'white',
-        backgroundColor: "black"
-      })
-      setBtn("light Mood")
-    }
-    else {
-            
-      setStyle({
-        color: 'black',
-        backgroundColor: "white"
-      })
-      setBtn("dark Mood")
-    }
-    }
+
   return (
     <>
-      <div style={myStyle} className="main">
-
-        <button onClick={change} >{btn}</button>
-      </div>
+<Theme />  
+<Ternary />
+<Blb />
+<Count /> 
     </>
   );
 }
